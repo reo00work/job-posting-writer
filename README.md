@@ -1,5 +1,7 @@
 # job-posting-writer — AI求人票・スカウトメール生成デモ（コンプライアンスチェック付き）
 
+**公開デモ: https://job-posting-writer-sigma.vercel.app**
+
 「求人票づくり・スカウト文作成を0から行う必要がなくなる」の実証。**APIキー不要でそのまま動く**。
 キーがあれば Claude API（Haiku）が業種のトーンでさらに推敲する。
 
