@@ -1,0 +1,23 @@
+{
+  "job": {
+    "job_title": "バックエンドエンジニア",
+    "company_name": "株式会社サンプルテック",
+    "industry": "it",
+    "employment_type": "正社員",
+    "salary_range": "年収500万〜800万円（経験・スキルに応じて決定）",
+    "work_location": "東京都渋谷区（フルリモート可）",
+    "appeal_points": [
+      "フルリモート勤務・フレックスタイム制で裁量をもって働ける",
+      "自社SaaSプロダクトのアーキテクチャ刷新に0→1フェーズから参加できる",
+      "残業月10時間以内・年間休日125日"
+    ],
+    "requirements": [
+      "Python or Goでのサーバーサイド開発実務経験2年以上",
+      "RDBMS（PostgreSQL等）を用いた設計・運用経験"
+    ]
+  },
+  "candidate": {
+    "candidate_name": "田中",
+    "candidate_highlight": "前職での決済基幹システムをPythonで刷新したご経験"
+  }
+}

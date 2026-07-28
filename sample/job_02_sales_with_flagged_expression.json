@@ -1,0 +1,16 @@
+{
+  "job": {
+    "job_title": "法人営業マン",
+    "company_name": "株式会社サンプル商事",
+    "industry": "sales",
+    "employment_type": "正社員",
+    "work_location": "大阪府大阪市",
+    "appeal_points": [
+      "未経験からでもインセンティブ制度でしっかり稼げる",
+      "30歳以下の方限定・若手が多く活躍中の職場です"
+    ],
+    "requirements": [
+      "普通自動車運転免許（AT限定可）"
+    ]
+  }
+}
