@@ -92,6 +92,10 @@ def render_index_html() -> bytes:
   body {{ font-family: -apple-system, "Hiragino Sans", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; background: #f7f7f8; }}
   h1 {{ font-size: 18px; }}
   p.lead {{ color: #555; font-size: 14px; }}
+  .demo-intro {{ background: #eef4ff; border: 1px solid #cfe0ff; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; line-height: 1.7; color: #333; }}
+  .demo-intro dt {{ font-weight: bold; margin-top: 8px; }}
+  .demo-intro dt:first-child {{ margin-top: 0; }}
+  .demo-intro dd {{ margin: 0 0 2px 0; }}
   label {{ display: block; margin-top: 12px; font-size: 13px; color: #333; }}
   select, input[type=text], textarea {{ width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 14px; margin-top: 4px; }}
   textarea {{ height: 70px; }}
@@ -115,6 +119,16 @@ def render_index_html() -> bytes:
 </head>
 <body>
 <h1>job-posting-writer デモ — 求人情報を入力して求人票・スカウトメールを生成</h1>
+<div class="demo-intro">
+  <dl>
+    <dt>想定シーン</dt>
+    <dd>中小企業の人事担当・スタートアップの現場マネージャーが、求人票やスカウトメールを一から書く時間がなく、かつ年齢・性別等の禁止表現を意図せず含めていないか不安な場面。</dd>
+    <dt>読み込んでいるデータ</dt>
+    <dd>下のフォームは <code>sample/job_01_it_engineer_scout.json</code>（ITエンジニア求人＋候補者ハイライトつき・禁止表現なし）や <code>sample/job_02_sales_with_flagged_expression.json</code>（営業職求人・「30歳以下」「営業マン」等の年齢制限・性別限定表現を含む）と同じ構造（職種名・会社名・魅力ポイント・応募資格・候補者情報等）で送信されます。</dd>
+    <dt>見てほしいポイント</dt>
+    <dd>求人票の生成と同時に、年齢制限表現（労働施策総合推進法9条）・性別限定表現（男女雇用機会均等法5条）・身体的条件表現の3カテゴリをキーワードベースで自動検出します（コンプライアンスチェック）。候補者の経歴ハイライトを入力すると、同じ求人情報を土台にしたスカウトメールもあわせて生成します。APIキーなしでもルールベースで常に動作し、ANTHROPIC_API_KEY設定時は給与・雇用形態・応募資格等の事実は変えずにClaude Haikuが業種トーンで文章のみ推敲します。</dd>
+  </dl>
+</div>
 <p class="lead">職種名・会社名・魅力ポイント等を入力して「求人票を生成する」を押してください。APIキー不要でルールベースの求人票が常に生成され、年齢・性別・身体的条件の禁止表現も同時にチェックします。候補者の経歴ハイライトも入力すると、スカウトメールもあわせて生成します。ANTHROPIC_API_KEY設定時は業種トーンに推敲した文章も追加生成します。</p>
 
 <label for="job_title">職種名（必須）
